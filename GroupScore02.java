@@ -6,6 +6,9 @@ public class GroupScore02{
         int i = 1;
         int j;
         double totalScore, avgScore, score;
+        double highestAvg = -1;
+        int highestGroup = -1;
+
         while (i <= 6){
             System.out.println("Grup " + i);
             totalScore = 0;
@@ -16,9 +19,15 @@ public class GroupScore02{
             }
 
         avgScore = totalScore / 5;
-        i++;
         System.out.println("Average score = " + avgScore);
+
+            if (avgScore > highestAvg){
+            highestAvg = avgScore;
+            highestGroup = i;
+            }
+            i++;
         }
+        System.out.println("The highest average score is from Group " + highestGroup + " with an average score of " + highestAvg);
         sc.close();
     }
 }
